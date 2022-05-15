@@ -209,3 +209,29 @@ MEDIA_ROOT = os.path.join('/data/media/')
 
 
 SITE_ID = 1
+
+MODEL_NAME = "slauw87/bart_summarisation"
+TRAIN_FILE = r"./data/train.csv"
+TEST_FILE = r"./data/test.csv"
+VALID_FILE = r"data\vali.csv"
+OUTPUT_DIR = "./output"
+TRAIN_BATCH_SIZE = 2
+EVAL_BATCH_SIZE = 2
+TRAIN_EPOCHS = 4
+TRAIN = True
+EVAL = True
+TEXT_COLUMN = "Content"
+SUMMARY_COLUMN = "Summary"
+SEED = 41
+LEARNING_RATE = 0.001
+
+USE_FAST_TOKENIZER = True
+MODEL_REVISION = 'main'
+USE_AUTH_TOKEN = False
+CACHE_DIR = None
+MAX_TRAIN_SAMPLES = None
+MAX_EVAL_SAMPLES = None
+PREPROCESSING_NUM_WORKERS = None
+SOURCE_PREFIX = None
+MAX_TARGET_LENGTH = 128
+VAL_MAX_TARGET_LENGTH = 128

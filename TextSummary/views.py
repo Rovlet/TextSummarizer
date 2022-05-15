@@ -12,12 +12,6 @@ class HomeView(TemplateView):
 
 
 class PostTextView(CreateView):
-    title = 'Text summarization app'
-    model = Text
-    template_name = 'index.html'
-
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         text = request.POST.get('story')
