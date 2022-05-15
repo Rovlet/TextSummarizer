@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView, CreateView, UpdateView
 from django.http import JsonResponse
-from .models import Text
+from summarize import summarizer
 
 
 class HomeView(TemplateView):
@@ -12,8 +12,10 @@ class HomeView(TemplateView):
 
 
 class PostTextView(CreateView):
-
     def post(self, request, *args, **kwargs):
         text = request.POST.get('story')
-        data = {'success': True, 'text': text}
+        print("Processing started...", flush=True)
+        summary = summarizer.summarize(text)
+        print(summary, flush=True)
+        data = {'success': True, 'summary': summary}
         return JsonResponse(data)

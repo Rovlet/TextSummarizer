@@ -167,12 +167,11 @@ Gutenberg major invention was a practical system permitting the mass production 
                 type: 'POST',
                 data: form_data,
                 success: function(data) {
-                    console.log("success!")
-                    $('#summary-result').text(data.text)
+                    $('#summary-result').text(data.summary)
                     $('#result').text("Success")
                 },
                 error: function(data) {
-                   $('#error').html(data.error);
+                    $('#error').html(data.error);
                     $('#summary-result').text('Something went wrong...')
                     $('#result').text("Error")
                 }

@@ -177,6 +177,11 @@ wheel==0.37.0
     # via pip-tools
 whitenoise==5.2.0
     # via -r requirements.in
+tensorflow-cpu
+transformers
+huggingface_hub
+rouge-score
+nltk
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip

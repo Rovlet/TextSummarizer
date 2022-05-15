@@ -273,6 +273,7 @@ def main():
         # region Prepare model
         model = TFAutoModelForSeq2SeqLM.from_pretrained(
             model_args.model_name_or_path,
+            from_pt=True,
             config=config,
             cache_dir=model_args.cache_dir,
             revision=model_args.model_revision,
