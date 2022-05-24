@@ -14,13 +14,12 @@ class HomeView(TemplateView):
 class PostTextView(CreateView):
     def post(self, request, *args, **kwargs):
         text = request.POST.get('story')
-        checkbox = request.POST.get('loop')
-        if checkbox == "loop":
-            checkbox = True
-        else:
-            checkbox = False
-        print(request.POST, flush=True)
+        make_summary_using_loop_model = request.POST.get('loop')
+
         print("Processing started...", flush=True)
-        summary = summarizer.summarize(text, checkbox)
+        if make_summary_using_loop_model == "loop":
+            summary = summarizer.summarize_using_loop_model(text)
+        else:
+            summary = summarizer.summarize_using_bert(text)
         data = {'success': True, 'summary': summary}
         return JsonResponse(data)
