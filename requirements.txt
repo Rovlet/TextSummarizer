@@ -187,6 +187,7 @@ transformers
 huggingface_hub
 rouge-score
 nltk
+sentencepiece
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip

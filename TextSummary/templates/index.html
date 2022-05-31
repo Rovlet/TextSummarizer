@@ -46,16 +46,22 @@ Gutenberg many contributions to printing are: the invention of a process for mas
 
 In Renaissance Europe, the arrival of mechanical movable type printing introduced the era of mass communication which permanently altered the structure of society. The relatively unrestricted circulation of information—including revolutionary ideas—transcended borders, and captured the masses in the Reformation. The sharp increase in literacy broke the monopoly of the literate elite on education and learning and bolstered the emerging middle class.</textarea>
                                                 </div><div class="form-check" style="margin: 5px;">
-                                                  <input class="form-check-input" type="radio" name="loop" value="loop" id="loop">
+                                                  <input class="form-check-input" type="radio" name="model_selection" value="loop" id="loop">
                                                   <label class="form-check-label" for="flexRadioDefault1" style="color: white">
                                                     The Summary Loop
                                                   </label>
                                                 </div>
                                                 <div class="form-check" style="margin: 5px;">
-                                                  <input class="form-check-input" type="radio" value="bart" name="loop" id="bart" checked>
+                                                  <input class="form-check-input" type="radio" value="bart" name="model_selection" id="bart" checked>
                                                   <label class="form-check-label" for="flexRadioDefault2" style="color: white">
                                                     Bart
                                                   </label>
+                                                </div>
+                                                </div><div class="form-check" style="margin: 5px;">
+                                                    <input class="form-check-input" type="radio" name="t5" value="model_selection" id="t5">
+                                                    <label class="form-check-label" for="flexRadioDefault1" style="color: white">
+                                                    T5
+                                                    </label>
                                                 </div>
                                                 <div class="form-group" style="justify-self: center; display: flex;">
 
@@ -76,6 +82,7 @@ In Renaissance Europe, the arrival of mechanical movable type printing introduce
                                         </div>
                                         <p id="summary-result">The German Johannes Gutenberg introduced printing in Europe. His invention had a decisive contribution in spread of mass-learning and in building the basis of the modern society.
 Gutenberg major invention was a practical system permitting the mass production of printed books. The printed books allowed open circulation of information, and prepared the evolution of society from to the contemporary knowledge-based economy.</p>
+                                        <p id="r-score">0.0</p>
                                     </div>
                                     <hr style="width:50%;text-align:center; margin-left: 3rem">
                                     	<div class="rating rating2" style="margin-left: 3rem">
@@ -144,6 +151,7 @@ Gutenberg major invention was a practical system permitting the mass production 
                 data: form_data,
                 success: function(data) {
                     $('#summary-result').text(data.summary)
+                    $('#r-score').text(data.rouge_score)
                     $('#result').text("Success")
                     $('#spinner').css('display', 'none');
                     $('#summary-result').css('display', 'inline-block');

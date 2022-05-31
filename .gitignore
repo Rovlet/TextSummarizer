@@ -1,2 +1,4 @@
 *.pyc
 .env-local
+models/
+old_Dockerfile
